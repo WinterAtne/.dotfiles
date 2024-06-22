@@ -13,7 +13,7 @@ compinit
 # End of lines added by compinstall
 
 #Prompt
-PS1="%F{#eeeeee}%n %1~:%f"
+PS1="%F{#eeeeee}%n %1~:%f "
 
 #Aliases
 alias clear="clear && fastfetch"
