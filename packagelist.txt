@@ -10,4 +10,5 @@ noto-fonts-emoji
 stow
 ttf-hack
 ttf-hack-nerd
+xclip
 zsh
