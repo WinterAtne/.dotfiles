@@ -1,5 +1,10 @@
 return {
 	"xiyaowong/transparent.nvim",
-	config = function()
-	end,
+	opts = {
+		exclude_groups = {
+			"CursorLine",
+			"StatusLine",
+			"StatusLineNC",
+		},
+	}
 }
