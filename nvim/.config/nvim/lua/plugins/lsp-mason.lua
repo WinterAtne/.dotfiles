@@ -4,6 +4,15 @@ return {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 	},
+	opts = {
+		settings = {
+			Lua = {
+				diagnostics = {
+					globals = { "vim" },
+				}
+			}
+		}
+	},
 	config = function()
 		require("mason").setup()
 		require("mason-lspconfig").setup()
@@ -11,6 +20,7 @@ return {
 			function (server_name)
 				require("lspconfig")[server_name].setup {}
 			end,
+
 		}
 	end,
 }
