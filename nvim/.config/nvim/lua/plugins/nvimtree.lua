@@ -11,7 +11,7 @@ return {
 		hijack_netrw = true,
 
 		update_cwd = true,
-		
+
 		-- This sets the window parameters
 		view = {
 			float = {
