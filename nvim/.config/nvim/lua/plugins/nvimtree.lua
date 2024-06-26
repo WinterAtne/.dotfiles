@@ -68,12 +68,11 @@ return {
 					symlink = "",
 					git = {
 						unstaged = "",
-						staged = "S",
-						unmerged = "",
-						renamed = "➜",
-						deleted = "",
-						untracked = "U",
-						ignored = "◌",
+						staged = "",
+						unmerged = "",
+						renamed = "",
+						untracked = "",
+						ignored = "",
 					},
 					folder = {
 						default = "",
