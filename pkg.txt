@@ -1,5 +1,6 @@
 brightnessctl
 fastfetch
+fd
 kitty
 lsd
 neovim
