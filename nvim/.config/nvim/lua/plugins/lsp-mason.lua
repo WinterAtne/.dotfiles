@@ -4,15 +4,6 @@ return {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 	},
-	opts = {
-		settings = {
-			Lua = {
-				diagnostics = {
-					globals = { "vim" },
-				}
-			}
-		}
-	},
 	config = function()
 		require("mason").setup()
 		require("mason-lspconfig").setup()
@@ -20,7 +11,17 @@ return {
 			function (server_name)
 				require("lspconfig")[server_name].setup {}
 			end,
+		}
 
+		--Gets rid of that stupid annoying "uNdEfInEd gLoBaL vim" warning
+		require("lspconfig").lua_ls.setup {
+			settings = {
+				Lua = {
+					diagnostics = {
+						globals = { 'vim' }
+					}
+				}
+			}
 		}
 	end,
 }
