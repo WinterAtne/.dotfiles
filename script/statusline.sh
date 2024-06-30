@@ -1,5 +1,7 @@
 #! /usr/bin/bash
 
+set -eou
+
 # Variables
 # Formatting
 left_seperator="["
@@ -22,15 +24,15 @@ function check_battery () {
 	status=$(cat /sys/class/power_supply/BAT0/status)
 
 	if [ "$status" = "Charging" ]; then
-		([ "$percent" -lt "25" ] && echo "$battery_empt_chr $percent%") || \
-		([ "$percent" -lt "50" ] && echo "$battery_low_chr $percent%") || \
-		([ "$percent" -lt "75" ] && echo "$battery_mid_chr $percent%") || \
-		([ "$percent" -lt "100" ] && echo "$battery_full_chr $percent%")
+		([[ "$percent" -lt 25 ]] && echo "$battery_empt_chr $percent%") || \
+		([[ "$percent" -lt 50 ]] && echo "$battery_low_chr $percent%") || \
+		([[ "$percent" -lt 75 ]] && echo "$battery_mid_chr $percent%") || \
+		([[ "$percent" -lt 100 ]] && echo "$battery_full_chr $percent%")
 	else
-		([ "$percent" -lt "25" ] && echo "$battery_empt $percent%") || \
-		([ "$percent" -lt "50" ] && echo "$battery_low $percent%") || \
-		([ "$percent" -lt "75" ] && echo "$battery_mid $percent%") || \
-		([ "$percent" -lt "100" ] && echo "$battery_full $percent%")
+		([[ "$percent" -lt 25 ]] && echo "$battery_empt $percent%") || \
+		([[ "$percent" -lt 50 ]] && echo "$battery_low $percent%") || \
+		([[ "$percent" -lt 75 ]] && echo "$battery_mid $percent%") || \
+		([[ "$percent" -lt 100 ]] && echo "$battery_full $percent%")
 	fi
 }
 
