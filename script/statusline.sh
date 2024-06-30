@@ -1,7 +1,5 @@
 #! /usr/bin/bash
 
-set -eou
-
 # Variables
 # Formatting
 left_seperator="["
@@ -18,7 +16,17 @@ battery_mid_chr="󱊥"
 battery_low_chr="󱊤"
 battery_empt_chr="󰢟"
 
-#Functions
+# Info Gathering Functions
+function check_date () {
+	ret=$(date +"%a %b %_d")
+	echo $ret
+}
+
+function check_time() {
+	ret=$(date +"%I:%M%P")
+	echo $ret
+}
+
 function check_battery () {
 	percent=$(cat /sys/class/power_supply/BAT0/capacity)
 	status=$(cat /sys/class/power_supply/BAT0/status)
@@ -27,19 +35,22 @@ function check_battery () {
 		([[ "$percent" -lt 25 ]] && echo "$battery_empt_chr $percent%") || \
 		([[ "$percent" -lt 50 ]] && echo "$battery_low_chr $percent%") || \
 		([[ "$percent" -lt 75 ]] && echo "$battery_mid_chr $percent%") || \
-		([[ "$percent" -lt 100 ]] && echo "$battery_full_chr $percent%")
+		([[ "$percent" -le 100 ]] && echo "$battery_full_chr $percent%")
 	else
 		([[ "$percent" -lt 25 ]] && echo "$battery_empt $percent%") || \
 		([[ "$percent" -lt 50 ]] && echo "$battery_low $percent%") || \
 		([[ "$percent" -lt 75 ]] && echo "$battery_mid $percent%") || \
-		([[ "$percent" -lt 100 ]] && echo "$battery_full $percent%")
+		([[ "$percent" -le 100 ]] && echo "$battery_full $percent%")
 	fi
 }
 
 # Main Loop
 while :
 do
-	statusline=$" $left_seperator $(check_battery) $right_seperator "
+	statusline=$""
+	statusline+=" $left_seperator $(check_battery) $right_seperator"
+	statusline+=" $left_seperator $(check_date) | $(check_time) $right_seperator"
+	
 	xsetroot -name "$statusline"
 	sleep $tick_rate
 done
