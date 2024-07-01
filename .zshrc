@@ -16,10 +16,10 @@ compinit
 PS1="%F{#eeeeee}%n %1~:%f "
 
 #Aliases
-alias clear="clear && fastfetch"
 alias ls="lsd"
 alias stvol="pactl set-sink-volume @DEFAULT_SINK@"
 
 #Initalizing programs
 clear
+fastfetch
 
