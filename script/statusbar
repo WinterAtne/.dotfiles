@@ -1,11 +1,11 @@
 #! /usr/bin/bash
+# This script updates the status bar by setting xsetroot -name
 
 # Variables
 # Formatting
-left_seperator="["
-right_seperator="]"
+left_seperator=""
 # Control
-tick_rate=60 # How often should the status be updated
+tick_rate=60 # Approximately how often should the display be updated
 # Battery : These are the icons used by the battery display
 battery_full="󱊣"
 battery_mid="󱊢"
@@ -44,13 +44,30 @@ function check_battery () {
 	fi
 }
 
+# Primary Functions
+function adjust_timing () { 
+	# The command is not launched at exactly 0s and,
+	# small innacurracies will compound to make the time display at weird intervals over time. 
+	# This ensures that the time is set at the top of the minute
+	off_by=$(date +"%S")
+	corrected_tick=$(($tick_rate-off_by))
+	echo $corrected_tick
+}
+
+function set_status () {
+	statusline=$" "
+	statusline+=" $left_seperator $(check_battery)"
+	statusline+=" $left_seperator $(check_time) $(check_date)"
+	statusline+=" "
+	
+	xsetroot -name "$statusline"
+}
+
+
 # Main Loop
 while :
 do
-	statusline=$""
-	statusline+=" $left_seperator $(check_battery) $right_seperator"
-	statusline+=" $left_seperator $(check_date) | $(check_time) $right_seperator"
-	
-	xsetroot -name "$statusline"
-	sleep $tick_rate
+	set_status
+	sleep $(adjust_timing)
 done
+
