@@ -17,6 +17,10 @@ battery_low_chr="󱊤"
 battery_empt_chr="󰢟"
 
 # Info Gathering Functions
+function check_user () {
+	echo $USER
+}
+
 function check_date () {
 	ret=$(date +"%a %b %_d")
 	echo $ret
@@ -58,6 +62,7 @@ function set_status () {
 	statusline=$" "
 	statusline+=" $left_seperator $(check_battery)"
 	statusline+=" $left_seperator $(check_time) $(check_date)"
+	statusline+=" $left_seperator $(check_user)"
 	statusline+=" "
 	
 	xsetroot -name "$statusline"
