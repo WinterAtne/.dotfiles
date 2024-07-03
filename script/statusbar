@@ -23,7 +23,7 @@ function check_date () {
 }
 
 function check_time() {
-	ret=$(date +"%I:%M%P")
+	ret=$(date +"%-I:%M%P")
 	echo $ret
 }
 
@@ -49,7 +49,7 @@ function adjust_timing () {
 	# The command is not launched at exactly 0s and,
 	# small innacurracies will compound to make the time display at weird intervals over time. 
 	# This ensures that the time is set at the top of the minute
-	off_by=$(date +"%S")
+	off_by=$(date +"%-S")
 	corrected_tick=$(($tick_rate-off_by))
 	echo $corrected_tick
 }

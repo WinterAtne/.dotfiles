@@ -1,5 +1,0 @@
-xorg
-picom
-feh
-pipewire
-pipewire-pulse

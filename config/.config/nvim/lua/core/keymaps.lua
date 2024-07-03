@@ -11,6 +11,9 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Unbinding
+keymap("n", "<S-j>", "", opts)
+
 
 -- Normal --
 -- Better window navigation
