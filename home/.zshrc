@@ -13,7 +13,9 @@ compinit
 # End of lines added by compinstall
 
 #Prompt
-PS1="%F{#eeeeee}%n %1~:%f "
+PS1="
+┌%K{098} %n %k%K{105}%F{098}%f %/ %k%F{105}%f
+└ ❱ "
 
 #Aliases
 alias ls="lsd"
