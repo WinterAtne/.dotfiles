@@ -17,6 +17,10 @@ PS1="
 ┌%K{098} %n %k%K{105}%F{098}%f %/ %k%F{105}%f
 └ ❱ "
 
+#Variables
+GOPATH=$HOME/go
+PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+
 #Aliases
 alias ls="lsd"
 alias stvol="pactl set-sink-volume @DEFAULT_SINK@"
