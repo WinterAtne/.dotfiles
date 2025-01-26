@@ -1,0 +1,52 @@
+# $HOME/.config/alacritty/alacritty.toml
+
+#general.live_config_reload = true
+
+[window]
+opacity = 0.8
+
+padding.x = 10
+padding.y = 10
+
+decorations = "Transparent"
+decorations_theme_variant = "Dark"
+blur = true
+
+[font]
+normal.family = "Hack Nerd Font Mono"
+
+size = 8.0
+
+# Nightfox Alacritty Colors
+## name: duskfox
+## upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/duskfox/alacritty.toml
+
+[colors.primary]
+background = "#232136"
+foreground = "#e0def4"
+dim_foreground = "#cdcbe0"
+bright_foreground = "#eae8ff"
+
+[colors.cursor]
+text = "#e0def4"
+cursor = "#cdcbe0"
+
+[colors.vi_mode_cursor]
+text = "#e0def4"
+cursor = "#9ccfd8"
+
+[colors.search.matches]
+foreground = "#e0def4"
+background = "#63577d"
+
+[colors.search.focused_match]
+foreground = "#e0def4"
+background = "#a3be8c"
+
+[colors.footer_bar]
+foreground = "#e0def4"
+background = "#373354"
+
+[colors.hints.start]
+foreground = "#e0def4"
+background = "#ea9a97"
