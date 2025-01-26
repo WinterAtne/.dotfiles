@@ -15,6 +15,9 @@ battery_full_chr="󱊦"
 battery_mid_chr="󱊥"
 battery_low_chr="󱊤"
 battery_empt_chr="󰢟"
+# Memory
+memory_chr=""
+#memory_total=$(free -h | grep Mem | awk '{print $2}')
 
 # Info Gathering Functions
 function check_date () {
@@ -44,6 +47,13 @@ function check_battery () {
 	fi
 }
 
+function check_ram () {
+#	memory_free=$(free -h | grep Mem | awk '{print $3}' | sed 's/[^0-9.]*//g')
+#	echo "${memory_chr}  ${memory_free}/${memory_total}"
+	mem=$(free | grep Mem | awk '{print $3/$2 * 100.0}')
+	echo "${memory_chr} ${mem%.*}%"
+}
+
 # Primary Functions
 function adjust_timing () { 
 	# The command is not launched at exactly 0s and,
@@ -56,6 +66,7 @@ function adjust_timing () {
 
 function set_status () {
 	statusline=$" "
+	statusline+=" $left_seperator $(check_ram)"
 	statusline+=" $left_seperator $(check_battery)"
 	statusline+=" $left_seperator $(check_time) $(check_date)"
 	statusline+=" "
@@ -63,7 +74,7 @@ function set_status () {
 	xsetroot -name "$statusline"
 }
 
-
+ 
 # Main Loop
 while :
 do
