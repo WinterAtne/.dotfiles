@@ -1,0 +1,97 @@
+// Inspired by the duskfox varient of the theme nightfox
+// https://github.com/EdenEast/nightfox.nvim.git
+
+* {
+	bg0:	#191726; 	// Dark bg (status line and float)
+	bg1:	#23213678;	// Default bg
+	bg2:	#2d2a45;		// Lighter bg (colorcolm folds)
+	bg3:	#373354;		// Lighter bg (cursor line)
+	bg4:	#4b4673;		// Conceal, border fg
+
+	fg0:	#eae8ff;		// Lighter fg
+	fg1:	#e0def4;		// Default fg
+	fg2:	#cdcbe0;		// Darker fg (status line)
+	fg3:	#6e6a86;		// Darker fg (line numbers, fold colums)
+
+	seltext: #cdcbe0; // Selected text
+	sel0:	#433c5998;		// Popup bg, visual selection bg
+	sel1:	#63577d;		// Popup sel bg, search bg
+
+	basetext: #e0def4; // Text color
+	baseaccent: #569fba;
+
+	background-color:	transparent;
+	accent-color: 		@baseaccent;
+	text-color: 		@basetext;
+}
+
+window {
+	background-color:	@bg1;
+	border-color:		@bg4;
+
+	location:	center;
+	width:		720px;
+	border:		2px;
+}
+
+inputbar {
+	padding:		8px 12px;
+	spacing:		12px;
+	children:	[ prompt, entry ];
+}
+
+prompt, entry, element-text, element-icon {
+	vertical-align: 0.5;
+}
+
+prompt {
+	text-color: @accent-color;
+}
+
+listview {
+	lines:	8;
+	columns:	1;
+
+	fixed-height:	true;
+}
+
+element {
+	padding:	8px;
+	spacing:	8px;
+}
+
+//element normal urgent {
+//	text-color: @nord13;
+//}
+//
+element normal active {
+	text-color: @accent-color;
+}
+
+element alternate active {
+	text-color: @accent-color;
+}
+
+element selected {
+	text-color: @seltext;
+}
+
+element selected normal {
+	background-color:	@sel0;
+}
+
+element selected urgent {
+	background-color:	@fg3;
+}
+
+element selected active {
+	background-color:	@bg0;
+}
+
+element-icon {
+	size:	1.00em;
+}
+
+element-text {
+	text-color: inherit;
+}
