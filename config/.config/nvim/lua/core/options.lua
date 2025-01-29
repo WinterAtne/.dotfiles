@@ -17,15 +17,15 @@ local options = {
 	smartindent = true,			--Sets smart indenting
 	smartcase = true,				--Ingore case when searching
 	splitbelow = true,			--Force horizontol windows to go below current window
-	splitright = true,			--Force veriticle windows to go right of current window
+	splitright = false,			--Force veriticle windows to go right of current window
 	showtabline = 2,				--Always show tabs
-	tabstop = 3,					--Sizeof tabs
+	tabstop = 4,					--Sizeof tabs
 	termguicolors = true,		--Use gui colors in terminal
 	undofile = true,				--Undo across sessions for file
 	undolevels = 1000,			--The number of undos that are stored
 }
 
 for k, v in pairs(options) do
-    vim.opt[k] = v
+	vim.opt[k] = v
 end
 
