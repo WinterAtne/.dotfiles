@@ -3,10 +3,17 @@
 
 # Variables
 # Formatting
-left_seperator=""
+left_seperator="["
+right_seperator="]"
 # Control
 tick_rate=60 # Approximately how often should the display be updated
+bad_color="^c#eb6f92^"
+# Memory
+memory_color="^c#ea9a97^"
+memory_chr=""
+
 # Battery : These are the icons used by the battery display
+battery_color="^c#9ccfd8^"
 battery_full="󱊣"
 battery_mid="󱊢"
 battery_low="󱊡"
@@ -15,9 +22,6 @@ battery_full_chr="󱊦"
 battery_mid_chr="󱊥"
 battery_low_chr="󱊤"
 battery_empt_chr="󰢟"
-# Memory
-memory_chr=""
-#memory_total=$(free -h | grep Mem | awk '{print $2}')
 
 # Info Gathering Functions
 function check_date () {
@@ -51,28 +55,17 @@ function check_ram () {
 #	memory_free=$(free -h | grep Mem | awk '{print $3}' | sed 's/[^0-9.]*//g')
 #	echo "${memory_chr}  ${memory_free}/${memory_total}"
 	mem=$(free | grep Mem | awk '{print $3/$2 * 100.0}')
-	echo "${memory_chr} ${mem%.*}%"
+	echo "${memory_chr}  ${mem%.*}%"
 }
 
 # Primary Functions
-function adjust_timing () { 
-	# The command is not launched at exactly 0s and,
-	# small innacurracies will compound to make the time display at weird intervals over time. 
-	# This ensures that the time is set at the top of the minute
-	off_by=$(date +"%-S")
-	corrected_tick=$(($tick_rate-off_by))
-	echo $corrected_tick
-}
-
 function set_status () {
-	statusline=$" "
-	statusline+=" $left_seperator $(check_ram)"
-	statusline+=" $left_seperator $(check_battery)"
-	statusline+=" $left_seperator $(check_time) $(check_date)"
-	statusline+=" "
+	statusline=" $memory_color$left_seperator $(check_ram) $right_seperator"
+	statusline+=" $battery_color$left_seperator $(check_battery) $right_seperator"
+	statusline+=" $left_seperator $(check_time) $right_seperator"
+	statusline+=" $left_seperator $(check_date) $right_seperator"
 	
 	xsetroot -name "$statusline"
-	#xsetroot -name "[status2d] ^c#FF0000^red text with blue rectangle^c#55cdfc^^r3,3,14,14^^f20^^c#FFFFFF^^b#f7a8b8^ and white text on pink background "
 }
 
  
@@ -80,6 +73,6 @@ function set_status () {
 while :
 do
 	set_status
-	sleep $(adjust_timing)
+	sleep $tick_rate
 done
 

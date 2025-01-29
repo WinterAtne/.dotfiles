@@ -20,10 +20,10 @@ PS1="
 #Variables
 GOPATH=$HOME/go
 PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
+COWPATH=$HOME/.dotfiles/CowPath/
 
 #Aliases
 alias ls="lsd"
-alias stvol="pactl set-sink-volume @DEFAULT_SINK@"
 
 #Initalizing programs
 clear
