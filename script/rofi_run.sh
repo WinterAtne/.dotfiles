@@ -1,3 +1,4 @@
 #! /bin/bash
 
-rofi -show run
+exec $(ls $HOME/.bin/ | rofi -dmenu)
+
