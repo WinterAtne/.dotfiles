@@ -1,4 +1,7 @@
 #! /bin/bash
 
-exec $(ls $HOME/.bin/ | rofi -dmenu)
+SCRIPTPATH=$HOME/.bin
+
+cd $SCRIPTPATH
+exec "./$(ls | rofi -dmenu)"
 
