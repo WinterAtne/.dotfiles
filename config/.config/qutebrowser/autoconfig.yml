@@ -7,7 +7,11 @@
 config_version: 2
 settings:
   colors.webpage.darkmode.enabled:
-    global: true
+    global: false
+  colors.webpage.preferred_color_scheme:
+    global: dark
+  scrolling.smooth:
+    global: false
   spellcheck.languages:
     global:
     - en-US

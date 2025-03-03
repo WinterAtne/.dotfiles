@@ -12,7 +12,7 @@
 
 # Change the argument to True to still load settings configured via autoconfig.yml
 config.load_autoconfig(True)
-config.set("colors.webpage.darkmode.enabled", True)
+config.set("colors.webpage.darkmode.enabled", False)
 
 # Binds
 config.bind('e', 'cmd-set-text :quickmark-load')
