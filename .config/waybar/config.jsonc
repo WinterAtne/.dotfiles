@@ -1,0 +1,13 @@
+{
+	"layer": "bottom",
+	"position": "top",
+	"height": 24,
+	"spacing": 5,
+	"modules-left": ["hyprland/workspaces","hyprland/mode"],
+	"modules-center": ["hyprland/window"],
+	"modules-right": ["battery","clock","tray"],
+	"battery": {
+		"format": "{capacity}% {icon}",
+		"format-icons": ["󰂎", "󱊡", "󱊢", "󱊣"]
+	},
+}
