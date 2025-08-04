@@ -9,7 +9,7 @@ window#waybar{
 	all: unset;
 }
 
-#mpris, #clock, #workspaces, #memory, #battery, #window {
+#mpris, #clock, #workspaces, #memory, #battery, #window, #cpu, #backlight, #pulseaudio {
 	color: @foreground;
 	padding: 2px 10px;
 	border-radius: 2px;
@@ -32,6 +32,25 @@ window#waybar{
 	color: @foreground;
 }
 
+/* --- CPU --- */
+#cpu {
+	color: lightskyblue;
+}
+
+/* --- Memory --- */
+#memory {
+	color: darkseagreen;
+}
+#memory.warning {
+	color: orange;
+	font-weight: bold;
+}
+
+#memory.critical {
+	color: red;
+	font-weight: bold;
+}
+
 /* --- Workspaces --- */
 #workspaces {
 	margin-left: 0px;
@@ -45,6 +64,12 @@ window#waybar{
 	padding: 0px 10px;
 }
 
+/* --- Battery --- */
+#backlight {
+	color: lightgoldenrodyellow;
+}
+
+/* --- Battery --- */
 #battery {
 	color: lightskyblue;
 }
@@ -55,16 +80,8 @@ window#waybar{
 	color: red;
 }
 
-/* --- Memory --- */
-#memory {
-	color: aquamarine;
-}
-#memory.warning {
-	color: orange;
-	font-weight: bold;
+#clock {
+	color: floralwhite;
+	background: indigo;
 }
 
-#memory.critical {
-	color: red;
-	font-weight: bold;
-}
