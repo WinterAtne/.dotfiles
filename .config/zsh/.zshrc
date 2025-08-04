@@ -1,5 +1,5 @@
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.histfile
+HISTFILE=~/.local/histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd beep nomatch
@@ -24,6 +24,7 @@ COWPATH=$HOME/.dotfiles/CowPath/
 
 #Aliases
 alias ls="lsd"
+alias gittoken="xclip -sel c < ~/.local/gittoken"
 
 #Initalizing programs
 clear

@@ -45,6 +45,7 @@
 *.su
 *.idb
 *.pdb
+.zcompdump
 
 # Kernel Module Compile Results
 *.mod*
