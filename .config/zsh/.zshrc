@@ -24,7 +24,6 @@ COWPATH=$HOME/.dotfiles/CowPath/
 
 #Aliases
 alias ls="lsd"
-alias gittoken="xclip -sel c < ~/.local/gittoken"
 
 #Initalizing programs
 clear
