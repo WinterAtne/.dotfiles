@@ -3,11 +3,44 @@
 	"position": "top",
 	"height": 24,
 	"spacing": 5,
-	"modules-left": ["hyprland/workspaces","hyprland/mode"],
-	"modules-center": ["hyprland/window"],
-	"modules-right": ["battery","clock","tray"],
+
+	/* --- Left --- */
+
+	"modules-left": ["hyprland/window"],
+	"hyprland/window": {
+		"align": 0,
+		"format": "{class}",
+		"icon": true,
+		"icon-size": 14
+	},
+
+	/* --- Center --- */
+
+	"modules-center": ["hyprland/workspaces","hyprland/mode"],
+
+	/* --- Right --- */
+
+	"modules-right": ["memory","battery","clock"],
+	"memory": {
+		"format": "{used:0.1f}Gb/32Gb 󰍛",
+		"states": {
+			"warning": 80,
+			"critical": 90
+		}
+	},
 	"battery": {
 		"format": "{capacity}% {icon}",
-		"format-icons": ["󰂎", "󱊡", "󱊢", "󱊣"]
+		"format-icons": {
+			"default":  ["󰂎", "󱊡", "󱊢", "󱊣"],
+			"charging": ["󰢟", "󱊤", "󱊥", "󱊦"]
+		},
+		"states": {
+			"warning": 25,
+			"critical": 20
+		}
 	},
+	"clock": {
+		"format": "{:%a %b(%m) %d %Y 󰸗 | %I:%M%p 󰥔}",
+		"tooltip-format": null
+	}
 }
