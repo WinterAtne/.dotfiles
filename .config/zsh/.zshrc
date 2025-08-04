@@ -1,5 +1,5 @@
 # Lines configured by zsh-newuser-install
-HISTFILE=~/.local/histfile
+HISTFILE=~/.local/share/zsh/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 setopt autocd beep nomatch
@@ -9,7 +9,7 @@ bindkey -v
 zstyle :compinstall filename '/home/winter/.zshrc'
 
 autoload -Uz compinit
-compinit
+compinit -d ~/.local/share/zsh/.zcompdump
 # End of lines added by compinstall
 
 #Prompt
@@ -23,7 +23,6 @@ PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 #Aliases
 alias ls="lsd"
-alias gittoken="wl-copy < ~/.local/share/gittoken"
 alias cclear="wl-copy --clear"
 
 #Initalizing programs
