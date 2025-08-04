@@ -20,10 +20,11 @@ PS1="
 #Variables
 GOPATH=$HOME/go
 PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
-COWPATH=$HOME/.dotfiles/CowPath/
 
 #Aliases
 alias ls="lsd"
+alias gittoken="wl-copy < ~/.local/share/gittoken"
+alias cclear="wl-copy --clear"
 
 #Initalizing programs
 clear
