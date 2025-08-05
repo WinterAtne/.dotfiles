@@ -40,7 +40,7 @@
 
 	"pulseaudio": {
 		"format": "{volume}% {icon}",
-		"format-muted": "󰖁",
+		"format-muted": "{volume}% 󰖁",
 		"format-icons": ["󰕿", "󰖀", "󰕾"],
 		"tooltip": false
 	},
@@ -48,7 +48,7 @@
 	"backlight": {
 		"justify": "center",
 		"format": "{percent}% {icon}",
-		"format-icons": ["󰛩", "󱩑", "󱩖"],
+		"format-icons": ["󰛩", "󱩎", "󱩏", "󱩐", "󱩑", "󱩒", "󱩓", "󱩔", "󱩕", "󱩖", "󰛨"],
 		"tooltip": false
 	},
 
