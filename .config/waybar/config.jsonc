@@ -67,7 +67,7 @@
 	},
 
 	"clock": {
-		"format": "{:%a %b(%m) %d %Y 󰸗 | %I:%M%p 󰥔}",
+		"format": "{:%a %m/%d/%y 󰸗 %I:%M%p 󰥔}",
 		"justify": "center",
 		"tooltip": false
 	}
