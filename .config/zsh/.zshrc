@@ -24,6 +24,7 @@ PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 #Aliases
 alias ls="lsd"
 alias cclear="wl-copy --clear"
+alias startx="hyprland"
 
 #Initalizing programs
 clear
