@@ -1,7 +1,7 @@
 //@ pragma UseQApplication
 
 import Quickshell
-import "Bar.qml"
+import "modules/bar"
 
 Scope {
 	Bar {}

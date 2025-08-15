@@ -1,0 +1,5 @@
+singleton Audio 1.0 Audio.qml
+Bar 1.0 Bar.qml
+Clock 1.0 Clock.qml
+Power 1.0 Power.qml
+Brightness 1.0 Brightness.qml
