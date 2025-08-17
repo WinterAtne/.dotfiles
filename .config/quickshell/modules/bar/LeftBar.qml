@@ -7,76 +7,63 @@ Row {
 	spacing: 5
 	padding: 5
 
-	Rectangle {
-		anchors.verticalCenter: parent.verticalCenter
-		implicitWidth: audio.implicitWidth + 10
-		implicitHeight: parent.height
-		color: "pink"
+	Repeater {
+		property list<Section> entries: [
+			Section {
+				text: ((Audio.volume * 100).toFixed(0) + "%")
+				text_color: "black"
+				rect_color: "white"
+				border_color: "purple"
 
-		border {
-			color: "black"
-			width: 2
-		}
+			},
+			Section {
+				text: bright.text
+				text_color: "black"
+				rect_color: "white"
+				border_color: "purple"
+				Brightness {id: bright}
+			},
+			Section {
+				text: (pow.text)
+				text_color: "black"
+				rect_color: "white"
+				border_color: "purple"
+				Power {id: pow}
+			},
+			Section {
+				text: (clock.text)
+				text_color: "black"
+				rect_color: "white"
+				border_color: "purple"
+				Clock {id: clock}
+			}
+		]
 
-		Text {
-			id: audio
-			text: (Audio.volume * 100).toFixed(0) + "%"
-			anchors.verticalCenter: parent.verticalCenter
-			anchors.horizontalCenter: parent.horizontalCenter
-		}
-	}
+		model: entries
 
-	Rectangle {
-		anchors.verticalCenter: parent.verticalCenter
-		implicitWidth: brightness.implicitWidth + 10
-		implicitHeight: parent.height
-		color: "green"
+		// Rectangle {
+		// 	id: rect
+		// 	required property Section modelData
+		//
+		// 	anchors.verticalCenter: parent.verticalCenter
+		// 	implicitWidth: text_component.implicitWidth + 10
+		// 	implicitHeight: parent.height
+		// 	color: modelData.rect_color
+		// 	radius: 4
+		//
+		// 	border {
+		// 		color: modelData.border_color
+		// 		width: 2
+		// 	}
+		//
+		// 	Text {
+		// 		id: text_component
+		// 		anchors.centerIn: parent
+		// 		text: parent.modelData.text
+		// 		color: parent.modelData.text_color
+		// 	}
+		// }
 
-		border {
-			color: "black"
-			width: 2
-		}
-
-		Brightness {
-			id: brightness
-			anchors.verticalCenter: parent.verticalCenter
-			anchors.horizontalCenter: parent.horizontalCenter
-		}
-	}
-
-	Rectangle {
-		anchors.verticalCenter: parent.verticalCenter
-		implicitWidth: power.implicitWidth + 10
-		implicitHeight: parent.height
-		color: "red"
-
-		border {
-			color: "black"
-			width: 2
-		}
-
-		Power {
-			id: power
-			anchors.verticalCenter: parent.verticalCenter
-			anchors.horizontalCenter: parent.horizontalCenter
-		}
-	}
-
-	Rectangle {
-		anchors.verticalCenter: parent.verticalCenter
-		implicitWidth: clock.implicitWidth + 10
-		implicitHeight: parent.height
-		color: "blue"
-
-		border {
-			color: "black"
-			width: 2
-		}
-
-		Clock {
-			id: clock
-			anchors.verticalCenter: parent.verticalCenter
-			anchors.horizontalCenter: parent.horizontalCenter
-		}
+		Element {}
 	}
 }

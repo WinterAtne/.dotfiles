@@ -1,4 +1,5 @@
 import Quickshell
+import QtQuick
 
 Scope {
 	Variants {
@@ -17,7 +18,14 @@ Scope {
 
 			LeftBar {}
 			RightBar {}
-			CenterBar {}
+			// CenterBar {}
+			Rectangle {
+				anchors.verticalCenter: parent.verticalCenter
+				anchors.horizontalCenter: parent.horizontalCenter
+				anchors.bottom: parent.bottom
+				implicitWidth: 200
+				color: "black"
+			}
 
 			color: "transparent"
 
