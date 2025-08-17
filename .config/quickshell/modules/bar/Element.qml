@@ -20,5 +20,6 @@ Rectangle {
 		anchors.centerIn: parent
 		text: parent.modelData.text
 		color: parent.modelData.text_color
+		font.pointSize: 11
 	}
 }

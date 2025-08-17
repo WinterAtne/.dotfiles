@@ -1,5 +1,4 @@
 import Quickshell
-import QtQuick
 
 Scope {
 	Variants {
@@ -9,7 +8,8 @@ Scope {
 			required property var modelData
 			screen: modelData
 
-			implicitHeight: 30
+			color: "transparent"
+			implicitHeight: 32
 			anchors {
 				top: true
 				left: true
@@ -18,17 +18,7 @@ Scope {
 
 			LeftBar {}
 			RightBar {}
-			// CenterBar {}
-			Rectangle {
-				anchors.verticalCenter: parent.verticalCenter
-				anchors.horizontalCenter: parent.horizontalCenter
-				anchors.bottom: parent.bottom
-				implicitWidth: 200
-				color: "black"
-			}
-
-			color: "transparent"
-
+			CenterBar {}
 		}
 	}
 }
