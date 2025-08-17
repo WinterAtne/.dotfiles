@@ -10,32 +10,30 @@ Row {
 	Repeater {
 		property list<Section> entries: [
 			Section {
-				text: ((Audio.volume * 100).toFixed(0) + "%")
-				text_color: "black"
-				rect_color: "white"
-				border_color: "purple"
+				id: status
 
-			},
-			Section {
-				text: bright.text
+				readonly property string audio_icon:
+				(Audio.muted == true) ? "󰖁" :
+				(Audio.volume > (2/3)) ? "󰕾" :
+				(Audio.volume > (1/3)) ?  "󰖀" : "󰕿"
+
+				text: (audio_icon + " "+ (Audio.volume * 100).toFixed(0) + "%") +
+					" " + bright.text +
+					" " + pow.text
+
 				text_color: "black"
 				rect_color: "white"
 				border_color: "purple"
+				
 				Brightness {id: bright}
-			},
-			Section {
-				text: (pow.text)
-				text_color: "black"
-				rect_color: "white"
-				border_color: "purple"
 				Power {id: pow}
+				Clock {id: clock}
 			},
 			Section {
 				text: (clock.text)
 				text_color: "black"
 				rect_color: "white"
 				border_color: "purple"
-				Clock {id: clock}
 			}
 		]
 

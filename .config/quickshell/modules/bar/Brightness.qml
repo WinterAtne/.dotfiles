@@ -3,7 +3,7 @@ import QtQuick
 
 Text {
 	id: root
-	text: brightness + "%"
+	text: "󰛨 " + brightness + "%"
 	property real brightness: 1
 	property int maximum: 1
 	property real animatedBrightness: 1

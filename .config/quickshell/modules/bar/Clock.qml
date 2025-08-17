@@ -5,7 +5,7 @@ Text {
 	text: time
 
 	readonly property string time: {
-		Qt.formatDateTime(clock.date, "ddd MMM dd yy hh:mmAP")
+		Qt.formatDateTime(clock.date, "ddd MMM dd yy 󰸗 | hh:mmAP")
 	}
 
 	SystemClock {

@@ -20,6 +20,9 @@ Rectangle {
 		anchors.centerIn: parent
 		text: parent.modelData.text
 		color: parent.modelData.text_color
-		font.pointSize: 11
+		font.family: "JetBrainsMono Nerd Font"
+		font.bold: true
+		antialiasing: true
+		font.pixelSize: 15
 	}
 }
