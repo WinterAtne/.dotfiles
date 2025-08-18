@@ -36,20 +36,4 @@ Section {
 	(power >= 66) ? 1 :
 	(power >= 33) ? 2 :
 	(power >= 20) ? 3 : 4
-
-
-	// (UPower.displayDevice.state == 2) ?
-	// (
-	// 	(power >= 80) ? "󰂃" :
-	// 	(power >= 66) ? "󱊣" :
-	// 	(power >= 33) ? "󱊢" :
-	// 	(power >= 20) ? "󱊡" : "󰂎"
-	// )
-	// :
-	// (
-	// 	(power >= 80) ? "󰂅" :
-	// 	(power >= 66) ? "󱊦" :
-	// 	(power >= 33) ? "󱊥" :
-	// 	(power >= 20) ? "󱊤" : "󰢟"
-	// )
 }
