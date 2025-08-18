@@ -5,6 +5,7 @@ import Quickshell.Hyprland
 Section {
 	id: keyboard
 	text: ""
+	property string activelayout: ""
 
 	Process {
 	  id: seedProcHypr
@@ -26,9 +27,15 @@ Section {
 					active = k.active_keymap;
 				});
 
-				keyboard.text = (active.startsWith("Greek")) ? " GR" : " IN"
+				keyboard.activelayout = (active.startsWith("Greek")) ? "GR" : "IN"
+				keyboard.text = " " + keyboard.activelayout
 			}
 		}
+	}
+
+	Process {
+		id: notifysend
+		command: ["notify-send", "Keyboard Change", "Layout is " + keyboard.activelayout]
 	}
 	
 	 // Listen for Hyprland layout change events
@@ -37,6 +44,7 @@ Section {
 		function onRawEvent(event) {
 		if (event.name !== "activelayout") return
 			seedProcHypr.running = true
+			notifysend.running = true
 		}
 	}
 }
