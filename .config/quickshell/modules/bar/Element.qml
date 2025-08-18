@@ -20,7 +20,8 @@ Rectangle {
 		anchors.centerIn: parent
 		text: parent.modelData.text
 		color: parent.modelData.text_color
-		font.family: "JetBrainsMono Nerd Font"
+		font.family: "Hack Nerd Font"
+		font.kerning: true
 		font.bold: true
 		antialiasing: true
 		font.pixelSize: 15

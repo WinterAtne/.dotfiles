@@ -10,6 +10,11 @@ Row {
 	Repeater {
 		property list<Section> entries: [
 			Section {
+				text: keys.text
+
+				Keyboard {id: keys}
+			},
+			Section {
 				id: status
 
 				readonly property string audio_icon:
