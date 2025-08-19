@@ -6,7 +6,7 @@ Rectangle {
 	implicitWidth: workspaces.implicitWidth
 	implicitHeight: parent.height
 	color: "transparent"
-	radius: 4
+	radius: 40
 
 	border {
 		color: "white"
@@ -19,8 +19,8 @@ Rectangle {
 		anchors.horizontalCenter: parent.horizontalCenter
 		anchors.bottom: parent.bottom
 
-		spacing: 5
-		padding: 10
+		spacing: 7
+		padding: 7
 
 		Repeater {
 			model: Hyprland.workspaces
@@ -30,10 +30,11 @@ Rectangle {
 				anchors.verticalCenter: parent.verticalCenter
 				implicitHeight: 24
 				implicitWidth: windows.implicitWidth
-				color: (modelData.active) ? "white" : "lightgrey"
+				radius: 40
+				color: (modelData.active) ? "white" : "transparent"
 
 				border {
-					color: (modelData.active) ? "purple" : "black"
+					color: (modelData.active) ? "purple" : ((modelData.active) ? "black" : "lightgrey")
 					width: 2
 				}
 
@@ -60,6 +61,7 @@ Rectangle {
 					}
 
 					Repeater {
+						readonly property HyprlandWorkspace workspace: parent.workspace
 						model: parent.workspace.toplevels
 						
 						delegate: Text {
@@ -67,7 +69,7 @@ Rectangle {
 
 							anchors.verticalCenter: parent.verticalCenter
 							text: (modelData.lastIpcObject?.class) ? modelData.lastIpcObject?.class : "󱦟"
-							color: (modelData.activated) ? "purple" : "black"
+							color: (modelData.activated) ? "purple" : ((parent.workspace.active) ? "black" : "lightgrey")
 
 							font.family: "Hack Nerd Font"
 							font.kerning: true
