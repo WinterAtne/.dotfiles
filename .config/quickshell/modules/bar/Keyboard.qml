@@ -27,7 +27,7 @@ Section {
 					active = k.active_keymap;
 				});
 
-				keyboard.activelayout = (active.startsWith("Greek")) ? "GR" : "IN"
+				keyboard.activelayout = (active.startsWith("Greek")) ? "ΕΛ" : "IN"
 				keyboard.text = " " + keyboard.activelayout
 			}
 		}

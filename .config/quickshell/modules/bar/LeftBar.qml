@@ -16,7 +16,7 @@ Row {
 
 			Section {
 				readonly property string audio_icon:
-				(Audio.muted == true) ? "󰖁" :
+				(Audio.muted == true) ? "󰝟" :
 				(Audio.volume > (2/3)) ? "󰕾" :
 				(Audio.volume > (1/3)) ?  "󰖀" : "󰕿"
 				
