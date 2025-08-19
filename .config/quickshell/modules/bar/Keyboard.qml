@@ -44,7 +44,6 @@ Section {
 		function onRawEvent(event) {
 		if (event.name !== "activelayout") return
 			seedProcHypr.running = true
-			notifysend.running = true
 		}
 	}
 }
