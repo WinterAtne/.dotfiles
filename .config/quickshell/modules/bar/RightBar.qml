@@ -24,4 +24,22 @@ Row {
 		}
 	}
 
+	Repeater {
+		readonly property list<Section> entries: [
+			Section {
+				text: ""
+			},
+			Section {
+				text: ""
+			},
+			Section {
+				text: " Background"
+			}
+		]
+
+		model: entries
+
+		Element {}
+	}
+
 }
