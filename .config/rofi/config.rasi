@@ -1,5 +1,5 @@
 configuration {
-	modes: "window,drun,run,ssh,combi";
+	modes: "window,drun,run,combi,calc";
 /*	font: "mono 12";*/
 /*	location: 0;*/
 /*	yoffset: 0;*/
