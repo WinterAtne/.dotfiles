@@ -46,6 +46,18 @@ Rectangle {
 					spacing: 8
 					padding: 10
 
+
+					Text {
+						anchors.verticalCenter: parent.verticalCenter
+						text: (parent.workspace.toplevels.values.length !== 0) ? "" : "󰣇"
+
+						font.family: "Hack Nerd Font"
+						font.kerning: true
+						font.bold: true
+						antialiasing: true
+						font.pixelSize: 12
+					}
+
 					Repeater {
 						model: parent.workspace.toplevels
 						

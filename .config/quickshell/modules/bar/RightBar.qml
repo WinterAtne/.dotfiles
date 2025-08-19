@@ -7,9 +7,21 @@ Row {
 	spacing: 5
 	padding: 5
 
-	Element {
-		modelData: Section {
-			text: ""
+	Rectangle {
+		anchors.verticalCenter: parent.verticalCenter
+		implicitWidth: text_component.implicitWidth + 10
+		implicitHeight: parent.height
+		color: "transparent"
+
+		Text {
+			id: text_component
+			anchors.centerIn: parent
+			text: "󰣇"
+			color: "lightskyblue"
+			font.family: "Hack Nerd Font"
+			antialiasing: true
+			font.pixelSize: 32
 		}
 	}
+
 }
