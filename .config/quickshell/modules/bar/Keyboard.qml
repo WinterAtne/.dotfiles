@@ -32,11 +32,6 @@ Section {
 			}
 		}
 	}
-
-	Process {
-		id: notifysend
-		command: ["notify-send", "Keyboard Change", "Layout is " + keyboard.activelayout]
-	}
 	
 	 // Listen for Hyprland layout change events
 	Connections {
