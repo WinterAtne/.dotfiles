@@ -19,8 +19,8 @@ Rectangle {
 		anchors.horizontalCenter: parent.horizontalCenter
 		anchors.bottom: parent.bottom
 
-		spacing: 7
-		padding: 7
+		spacing: 5
+		padding: 5
 
 		Repeater {
 			model: Hyprland.workspaces
@@ -46,7 +46,7 @@ Rectangle {
 					anchors.horizontalCenter: parent.horizontalCenter
 					anchors.bottom: parent.bottom
 					spacing: 8
-					padding: 10
+					padding: 8
 
 
 					Text {

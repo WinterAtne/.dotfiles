@@ -26,9 +26,7 @@ Row {
 
 	Repeater {
 		readonly property list<Section> entries: [
-			Section {
-				text: ""
-			},
+			CPU {},
 			Section {
 				text: ""
 			},
