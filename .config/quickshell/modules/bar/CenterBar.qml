@@ -68,7 +68,7 @@ Rectangle {
 							required property HyprlandToplevel modelData
 
 							anchors.verticalCenter: parent.verticalCenter
-							text: (modelData.lastIpcObject?.class) ? modelData.lastIpcObject?.class : "󱦟"
+							text: (modelData.lastIpcObject?.class) ? modelData.lastIpcObject?.class : ""
 							color: (modelData.activated) ? "purple" : ((parent.workspace.active) ? "black" : "lightgrey")
 
 							font.family: "Hack Nerd Font"
