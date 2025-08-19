@@ -8,7 +8,7 @@ Row {
 	padding: 5
 
 	Repeater {
-		property list<Section> entries: [
+		readonly property list<Section> entries: [
 			Section {
 				text: keys.text
 				Keyboard {id: keys}
