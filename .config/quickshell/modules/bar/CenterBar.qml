@@ -9,7 +9,7 @@ Rectangle {
 	radius: 4
 
 	border {
-		color: "grey"
+		color: "white"
 		width: 2
 	}
 
@@ -30,6 +30,7 @@ Rectangle {
 				anchors.verticalCenter: parent.verticalCenter
 				implicitHeight: 24
 				implicitWidth: windows.implicitWidth
+				color: (modelData.active) ? "white" : "lightgrey"
 
 				border {
 					color: (modelData.active) ? "purple" : "black"
