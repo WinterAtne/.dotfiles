@@ -15,25 +15,35 @@ Row {
 			},
 
 			Section {
+				id: pannel
+				rect_color: "transparent"
+				border_color: "darkgrey"
+
 				readonly property string audio_icon:
 				(Audio.muted == true) ? "󰝟" :
 				(Audio.volume > (2/3)) ? "󰕾" :
 				(Audio.volume > (1/3)) ?  "󰖀" : "󰕿"
 				
-				text: audio_icon + " " + ((Audio.volume * 100).toFixed(0) + "%")
-			},
+				text: [
+					Info {
+						info: pannel.audio_icon + " " + ((Audio.volume * 100).toFixed(0) + "%")
+						color: "darkgrey"
+					},
+					Info {
+						info: bright.text
+						color: "darkgrey"
+					},
+					Info {
+						info: power.text
+						color: power.text_color
+					}
+				]
 
-			Section {
-				text: bright.text
 				Brightness {id: bright}
+				Power {id: power}
 			},
 
-			Power {},
-
-			Section {
-				text: (clock.text)
-				Clock {id: clock}
-			}
+			Clock {}
 		]
 
 		model: entries

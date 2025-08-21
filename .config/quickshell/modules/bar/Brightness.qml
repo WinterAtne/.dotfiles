@@ -1,9 +1,10 @@
+import Quickshell
 import Quickshell.Io
 import QtQuick
 
-Text {
+Scope {
 	id: root
-	text: "󰛨 " + brightness + "%"
+	readonly property string text: "󰛨 " + brightness + "%"
 	property real brightness: 1
 	property int maximum: 1
 	property real animatedBrightness: 1

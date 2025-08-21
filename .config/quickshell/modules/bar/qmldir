@@ -10,3 +10,4 @@ Section 1.0 Section.qml
 Element 1.0 Element.qml
 Keyboard 1.0 Keyboard.qml
 CPU 1.0 CPU.qml
+Info 1.0 Info.qml

@@ -1,8 +1,10 @@
-import QtQuick
 import Quickshell
 
-Text {
-	text: time
+Section {
+	id: root
+	text: Info {
+		info: root.time
+	}
 
 	readonly property string time: {
 		Qt.formatDateTime(clock.date, "ddd MMM dd yy 󰸗 | hh:mmAP")

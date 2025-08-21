@@ -4,8 +4,11 @@ import Quickshell.Hyprland
 
 Section {
 	id: keyboard
-	text: ""
+	text: Info {
+		info: keyboard.display
+	}
 	property string activelayout: ""
+	property string display: ""
 
 	Process {
 	  id: seedProcHypr
@@ -28,7 +31,7 @@ Section {
 				});
 
 				keyboard.activelayout = (active.startsWith("Greek")) ? "ΕΛ" : "IN"
-				keyboard.text = " " + keyboard.activelayout
+				keyboard.display = " " + keyboard.activelayout
 			}
 		}
 	}

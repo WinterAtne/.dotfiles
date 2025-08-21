@@ -1,11 +1,11 @@
+pragma ComponentBehavior: Bound
 import QtQuick
 
 Rectangle {
 	id: rect
 	required property Section modelData
-
 	anchors.verticalCenter: parent.verticalCenter
-	implicitWidth: text_component.implicitWidth + 10
+	implicitWidth: outer_rows.implicitWidth + 10
 	implicitHeight: parent.height
 	color: modelData.rect_color
 	radius: 4
@@ -15,15 +15,28 @@ Rectangle {
 		width: 2
 	}
 
-	Text {
-		id: text_component
+	Row {
+		id: outer_rows
 		anchors.centerIn: parent
-		text: parent.modelData.text
-		color: parent.modelData.text_color
-		font.family: "Hack Nerd Font"
-		font.kerning: true
-		font.bold: true
-		antialiasing: true
-		font.pixelSize: 15
+		spacing: 10
+		padding: 5
+
+		Repeater {
+			model: rect.modelData.text.length
+
+			Text {
+				id: text_component
+				required property int modelData
+
+				text: rect.modelData.text[modelData].info
+				color: rect.modelData.text[modelData].color
+
+				font.family: "Hack Nerd Font"
+				font.kerning: true
+				font.bold: true
+				antialiasing: true
+				font.pixelSize: 15
+			}
+		}
 	}
 }
