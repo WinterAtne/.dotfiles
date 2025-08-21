@@ -6,9 +6,14 @@ Section {
 	id: keyboard
 	text: Info {
 		info: keyboard.display
+		color: keyboard.displaycolor
 	}
 	property string activelayout: ""
 	property string display: ""
+	property string displaycolor: "black"
+
+	rect_color: "transparent"
+	border_color: displaycolor
 
 	Process {
 	  id: seedProcHypr
@@ -31,6 +36,7 @@ Section {
 				});
 
 				keyboard.activelayout = (active.startsWith("Greek")) ? "ΕΛ" : "IN"
+				keyboard.displaycolor = (active.startsWith("Greek")) ? "lightskyblue" : "pink"
 				keyboard.display = " " + keyboard.activelayout
 			}
 		}

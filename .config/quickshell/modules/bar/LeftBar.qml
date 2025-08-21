@@ -9,15 +9,11 @@ Row {
 
 	Repeater {
 		readonly property list<Section> entries: [
-			Section {
-				text: keys.text
-				Keyboard {id: keys}
-			},
-
+			Keyboard {id: keys},
 			Section {
 				id: pannel
 				rect_color: "transparent"
-				border_color: "darkgrey"
+				border_color: "floralwhite"
 
 				readonly property string audio_icon:
 				(Audio.muted == true) ? "󰝟" :
@@ -27,11 +23,11 @@ Row {
 				text: [
 					Info {
 						info: pannel.audio_icon + " " + ((Audio.volume * 100).toFixed(0) + "%")
-						color: "darkgrey"
+						color: "floralwhite"
 					},
 					Info {
 						info: bright.text
-						color: "darkgrey"
+						color: bright.color
 					},
 					Info {
 						info: power.text

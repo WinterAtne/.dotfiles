@@ -5,6 +5,7 @@ import QtQuick
 Scope {
 	id: root
 	readonly property string text: "󰛨 " + brightness + "%"
+	property string color: "lightgoldenrodyellow"
 	property real brightness: 1
 	property int maximum: 1
 	property real animatedBrightness: 1
