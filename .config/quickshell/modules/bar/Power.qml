@@ -26,7 +26,6 @@ Scope {
 
 	readonly property string text_color: colors[state]
 	readonly property string rect_color: "transparent"
-	readonly property string border_color: colors[state]
 
 	readonly property string text: icon + " " + power + "%"
 	readonly property string icon: icons[state + ((UPower.displayDevice.state == 1) ? 5 : 0)]

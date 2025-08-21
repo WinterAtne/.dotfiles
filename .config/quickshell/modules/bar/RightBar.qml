@@ -28,10 +28,10 @@ Row {
 		readonly property list<Section> entries: [
 			CPU {},
 			Section {
-				text: Info{info:[""]}
+				text: Info{info: ""}
 			},
 			Section {
-				text: Info{info:[" Background"]}
+				text: Info{info: " Background"}
 			}
 		]
 
