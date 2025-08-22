@@ -1,4 +1,0 @@
-
-Section {
-	text: Info{info: ""}
-}

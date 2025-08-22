@@ -6,7 +6,7 @@ Rectangle {
 	implicitWidth: workspaces.implicitWidth
 	implicitHeight: parent.height
 	color: "transparent"
-	radius: 40
+	radius: implicitHeight
 
 	border {
 		color: "white"
@@ -69,7 +69,7 @@ Rectangle {
 
 							anchors.verticalCenter: parent.verticalCenter
 							text: (modelData.lastIpcObject?.class) ? modelData.lastIpcObject?.class : ""
-							color: (modelData.activated) ? "purple" : ((parent.workspace.active) ? "black" : "lightgrey")
+							color: (modelData.activated && modelData.workspace.active) ? "purple" : ((parent.workspace.active) ? "black" : "lightgrey")
 
 							font.family: "Hack Nerd Font"
 							font.kerning: true

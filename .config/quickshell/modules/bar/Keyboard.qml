@@ -41,6 +41,11 @@ Section {
 			}
 		}
 	}
+
+	Process {
+		id: notifysend
+		command: ["notify-send", "Keyboard Layout Changed: " + keyboard.activelayout]
+	}
 	
 	 // Listen for Hyprland layout change events
 	Connections {
@@ -48,6 +53,7 @@ Section {
 		function onRawEvent(event) {
 		if (event.name !== "activelayout") return
 			seedProcHypr.running = true
+			notifysend.running = true
 		}
 	}
 }

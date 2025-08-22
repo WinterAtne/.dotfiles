@@ -15,7 +15,7 @@ Row {
 
 		Text {
 			id: text_component
-			anchors.centerIn: parent
+			anchors.verticalCenter: parent.verticalCenter
 			text: "󰣇"
 			color: "lightskyblue"
 			font.family: "Hack Nerd Font"
@@ -24,20 +24,13 @@ Row {
 		}
 	}
 
-	Repeater {
-		readonly property list<Section> entries: [
-			CPU {},
-			Section {
-				text: Info{info: ""}
-			},
-			Section {
-				text: Info{info: " Background"}
-			}
-		]
-
-		model: entries
-
-		Element {}
-	}
+	// Repeater {
+	// 	readonly property list<Section> entries: [
+	// 	]
+	//
+	// 	model: entries
+	//
+	// 	Element {}
+	// }
 
 }
