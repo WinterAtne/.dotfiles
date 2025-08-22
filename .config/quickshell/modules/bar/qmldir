@@ -10,3 +10,4 @@ Section 1.0 Section.qml
 Element 1.0 Element.qml
 Keyboard 1.0 Keyboard.qml
 Info 1.0 Info.qml
+AudioDisplay 1.0 AudioDisplay.qml

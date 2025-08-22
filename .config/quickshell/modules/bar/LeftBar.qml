@@ -15,16 +15,8 @@ Row {
 				rect_color: "transparent"
 				border_color: "floralwhite"
 
-				readonly property string audio_icon:
-				(Audio.muted == true) ? "󰝟" :
-				(Audio.volume > (2/3)) ? "󰕾" :
-				(Audio.volume > (1/3)) ?  "󰖀" : "󰕿"
-				
 				text: [
-					Info {
-						info: pannel.audio_icon + " " + ((Audio.volume * 100).toFixed(0) + "%")
-						color: "floralwhite"
-					},
+					AudioDisplay {},
 					Info {
 						info: bright.text
 						color: bright.color
