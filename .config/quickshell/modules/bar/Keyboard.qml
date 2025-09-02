@@ -16,16 +16,17 @@ Section {
 	border_color: displaycolor
 
 	Process {
-	  id: seedProcHypr
-	  running: true
-	  command: ["hyprctl", "-j", "devices"]
+		id: seedProcHypr
+		running: true
+		command: ["hyprctl", "-j", "devices"]
+		onExited: {notifysend.running = true}
 
 		stdout: StdioCollector {
 			onStreamFinished: {
 				var j = JSON.parse(text);
 				var arr = [], active = "";
 				j.keyboards.forEach(function (k) {
-					  if (!k.main)
+						if (!k.main)
 							return;
 							k.layout.split(",").forEach(function (l) {
 							var t = l.trim();
@@ -53,7 +54,6 @@ Section {
 		function onRawEvent(event) {
 		if (event.name !== "activelayout") return
 			seedProcHypr.running = true
-			notifysend.running = true
 		}
 	}
 }
